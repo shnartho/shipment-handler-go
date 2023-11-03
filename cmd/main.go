@@ -19,8 +19,8 @@ func main() {
 
 	r.Post("/orderpack", handler.OrderPackHandler)
 	r.Post("/addpack", handler.AddPackHandler)
-	r.Put("/updatepack", handler.UpdatePackHandler)
-	r.Delete("/removepack", handler.RemovePackHandler)
+	r.Post("/updatepack", handler.UpdatePackHandler)
+	r.Post("/removepack", handler.RemovePackHandler)
 
 	r.Get("/getslicevalues", handler.GetSliceHandler)
 

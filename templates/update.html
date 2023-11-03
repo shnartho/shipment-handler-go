@@ -7,11 +7,12 @@
 </head>
 <body>
     <form method="post" id="packForm">
-        <label for="inputValue" class="label">Update Pack:</label>
-        <input type="text" id="inputValue" name="inputValue">
-        <button type="button" class="styled-button" onclick="orderConfirmed()">Order now</button>
+        <label for="currentsize" class="label">Current Pack Size:</label>
+        <input type="text" id="currentsize" name="currentsize">
+        <label for="updatesize" class="label">Updated Pack Size:</label>
+        <input type="text" id="updatesize" name="updatesize">
+        <button type="button" class="styled-button" onclick="updatePack()">Update</button>
         <button type="button" onclick="window.location.href='/'" class="styled-button">Go Back</button>
     </form>
-    
 </body>
 </html>

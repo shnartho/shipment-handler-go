@@ -3,12 +3,28 @@ package main
 import (
 	"log"
 	"net/http"
+	"os"
+	"path/filepath"
 
 	"github.com/go-chi/chi"
 	"www.github.com/shnartho/shipment-handler-go/pkg/handler"
 )
 
 func main() {
+	exePath, err := os.Executable()
+	if err != nil {
+		log.Fatalf("Error: %v", err)
+		return
+	}
+	exeDir := filepath.Dir(exePath)
+
+	// Set the working directory to the executable's directory
+	err = os.Chdir(exeDir)
+	if err != nil {
+		log.Fatalf("Error: %v", err)
+		return
+	}
+
 	r := chi.NewRouter()
 
 	r.Get("/", handler.IndexHandler)

@@ -12,7 +12,17 @@ func main() {
 	r := chi.NewRouter()
 
 	r.Get("/", handler.IndexHandler)
-	r.Post("/check", handler.SubmitHandler)
+	r.Get("/order", handler.OrderHandler)
+	r.Get("/add", handler.AddHandler)
+	r.Get("/update", handler.UpdateHandler)
+	r.Get("/remove", handler.RemoveHandler)
+
+	r.Post("/orderpack", handler.OrderPackHandler)
+	r.Post("/addpack", handler.AddPackHandler)
+	r.Put("/updatepack", handler.UpdatePackHandler)
+	r.Delete("/removepack", handler.RemovePackHandler)
+
+	r.Get("/getslicevalues", handler.GetSliceHandler)
 
 	fs := http.FileServer(http.Dir("../static/"))
 	r.Handle("/static/*", http.StripPrefix("/static/", fs))

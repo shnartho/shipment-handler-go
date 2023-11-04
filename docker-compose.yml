@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  webapp:
+    image: shnartho/shipment-handler-go:4
+    ports:
+      - "80:80"

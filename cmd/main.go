@@ -18,7 +18,6 @@ func main() {
 	}
 	exeDir := filepath.Dir(exePath)
 
-	// Set the working directory to the executable's directory
 	err = os.Chdir(exeDir)
 	if err != nil {
 		log.Fatalf("Error: %v", err)
